@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        for ($i=1; $i < 50; $i++) { 
+        for ($i=1; $i < 500; $i++) { 
             \App\Models\User::create([
                 'name' => Str::random(10)
             ]);

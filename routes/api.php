@@ -22,20 +22,22 @@ use App\Models\User;
 
 Route::get('/user',function (Request $request) {
 
-        // $user = User::withCount(['posts','comments'])->get();
+        // $user = User::with(['posts','comments']);
+        $user = User::select('id','name');
         // $user = User::withCount(['posts','comments'])->where('id',2)->orWhere('id',10)->orWhere('id',4)->get()->paginate(2);
-        $users = User::with(['posts' => function ($query) {
-            $query->paginate(200);
-        },'comments' => function ($query) {
-            $query->paginate(200);
-        }])->get();
+        // $users = User::with(['posts' => function ($query) {
+        //     $query->paginate(200);
+        // },'comments' => function ($query) {
+        //     $query->paginate(200);
+        // }])->get();
 
-        foreach($users as $user)
-        {
-            $posts[] = $user->posts;
-        }
+        // foreach($users as $user)
+        // {
+        //     $posts[] = $user->posts;
+        // }
         //2 10 4
     //     $user = User::all();
     // dd($user);
-        return response()->json($posts);
-});
+        // return response()->json();
+        return datatables($user)->make(true);
+})->name('user');
