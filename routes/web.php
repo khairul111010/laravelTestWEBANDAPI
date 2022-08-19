@@ -20,7 +20,7 @@ use App\Models\User;
 
 Route::get('/',function (Request $request) {
 
-    $user = User::with(['posts','comments'])->get();
+    $user = User::with(['posts','comments'])->skip(0)->take(10)->get();
     // $user = User::withCount(['posts','comments'])->where('id',2)->orWhere('id',10)->orWhere('id',4)->get()->paginate(2);
     // $user = User::with(['posts' => function ($query) {
     //     $query->paginate(2);
@@ -29,10 +29,11 @@ Route::get('/',function (Request $request) {
     // }])->get();
     //2 10 4
 //     $user = User::all();
-// dd($user);
+// dd($user->toArray());
+// dd($user->toJson());
     // return response()->json($user);
-    echo '<pre>';
-    var_dump($user);
-    echo '</pre>';
+    // echo '<pre>';
+    // var_dump($user);
+    // echo '</pre>';
     return view('welcome', ['users' => $user]);
 });

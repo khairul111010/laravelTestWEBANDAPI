@@ -420,12 +420,7 @@
 
             </tbody>
         </table> -->
-        <!-- @foreach ($users as $user) -->
-            <!-- <h2>{{ $user->post-> }}</h2> -->
-            <!-- @foreach ( as )
-                
-            @endforeach
-        @endforeach -->
+        
 
 
     </div>
