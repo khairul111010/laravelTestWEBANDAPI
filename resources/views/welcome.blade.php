@@ -409,7 +409,7 @@
 <body class="antialiased">
     <div>
 
-        <table class="table w-100" id="usertable">
+        <!-- <table class="table w-100" id="usertable">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -419,7 +419,13 @@
             <tbody>
 
             </tbody>
-        </table>
+        </table> -->
+        <!-- @foreach ($users as $user) -->
+            <!-- <h2>{{ $user->post-> }}</h2> -->
+            <!-- @foreach ( as )
+                
+            @endforeach
+        @endforeach -->
 
 
     </div>
@@ -428,7 +434,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-<script>
+<!-- <script>
     $(document).ready( function () {
     $('#usertable').DataTable(
         {
@@ -445,6 +451,6 @@
         }
     );
 } );
-</script>
+</script> -->
 
 </html>

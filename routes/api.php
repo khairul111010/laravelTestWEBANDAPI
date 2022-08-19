@@ -22,8 +22,8 @@ use App\Models\User;
 
 Route::get('/user',function (Request $request) {
 
-        // $user = User::with(['posts','comments']);
-        $user = User::select('id','name');
+        $user = User::with(['posts','comments'])->skip(0)->take(10)->get();
+        // $user = User::select('id','name');
         // $user = User::withCount(['posts','comments'])->where('id',2)->orWhere('id',10)->orWhere('id',4)->get()->paginate(2);
         // $users = User::with(['posts' => function ($query) {
         //     $query->paginate(200);
@@ -38,6 +38,6 @@ Route::get('/user',function (Request $request) {
         //2 10 4
     //     $user = User::all();
     // dd($user);
-        // return response()->json();
-        return datatables($user)->make(true);
+        return response()->json($user);
+        // return datatables($user)->make(true);
 })->name('user');
